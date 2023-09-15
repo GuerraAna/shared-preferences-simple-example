@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">shared-preferences-simple-example</string>
+	<string name="save">salvar</string>
+	<string name="load">Carregar</string>
+	<string name="adult_check_box">É um adulto?</string>
+	<string name="age_input">Insira a idade</string>
+	<string name="name_input">Insira o nome</string>
+</resources>
