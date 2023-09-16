@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".PreferencesDataBaseActivity">
+
+	<Button
+		android:id="@+id/go_back"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="voltar"
+		android:layout_margin="24dp"
+		app:layout_constraintHorizontal_bias="0"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"/>
+
+	<EditText
+		android:id="@+id/key_input"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:hint="@string/key_input"
+		android:importantForAccessibility="yes"
+		android:inputType="text"
+		android:padding="8dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/go_back" />
+
+	<EditText
+		android:id="@+id/value_input"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:hint="@string/value_input"
+		android:importantForAccessibility="yes"
+		android:padding="8dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/key_input" />
+
+	<Button
+		android:id="@+id/save_button"
+		android:layout_width="150dp"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:importantForAccessibility="yes"
+		android:text="@string/save"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="1"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/value_input" />
+
+	<EditText
+		android:id="@+id/key_input_result"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:hint="@string/key_input"
+		android:importantForAccessibility="yes"
+		android:inputType="text"
+		android:padding="8dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/save_button" />
+
+	<Button
+		android:id="@+id/read_result"
+		android:layout_width="150dp"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:importantForAccessibility="yes"
+		android:text="@string/read_result"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="1"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/key_input_result" />
+
+	<TextView
+		android:id="@+id/search_result_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:importantForAccessibility="yes"
+		android:text="@string/serach_result"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/read_result" />
+
+	<TextView
+		android:id="@+id/search_result_value"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="24dp"
+		android:importantForAccessibility="yes"
+		android:text="@string/search_result_value"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/search_result_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

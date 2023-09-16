@@ -5,7 +5,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".MainActivity">
+	tools:context=".SharedPrecerencesActivity">
 
 	<EditText
 		android:id="@+id/input_name"
@@ -13,6 +13,7 @@
 		android:layout_height="wrap_content"
 		android:layout_margin="24dp"
 		android:hint="@string/name_input"
+		android:importantForAccessibility="yes"
 		android:inputType="text"
 		android:lines="1"
 		android:padding="8dp"
@@ -27,6 +28,7 @@
 		android:layout_height="wrap_content"
 		android:layout_margin="24dp"
 		android:hint="@string/age_input"
+		android:importantForAccessibility="yes"
 		android:inputType="number"
 		android:lines="1"
 		android:padding="8dp"
@@ -40,6 +42,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="24dp"
+		android:importantForAccessibility="yes"
 		android:text="@string/adult_check_box"
 		app:layout_constraintBottom_toTopOf="@id/linear_layout"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +56,7 @@
 		android:layout_height="wrap_content"
 		android:layout_margin="24dp"
 		android:gravity="center"
+		android:importantForAccessibility="no"
 		android:orientation="horizontal"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +67,7 @@
 			android:layout_width="150dp"
 			android:layout_height="wrap_content"
 			android:layout_marginEnd="10dp"
+			android:importantForAccessibility="yes"
 			android:text="@string/load"
 			android:textAlignment="center" />
 
@@ -70,7 +75,23 @@
 			android:id="@+id/save_button"
 			android:layout_width="150dp"
 			android:layout_height="wrap_content"
+			android:importantForAccessibility="yes"
 			android:text="@string/save"
 			android:textAlignment="center" />
 	</LinearLayout>
+
+	<Button
+		android:id="@+id/next_screen"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:importantForAccessibility="yes"
+		android:text="@string/next_preference_button"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/linear_layout"
+		app:layout_constraintVertical_bias="0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,19 @@
 <resources>
 	<string name="app_name">shared-preferences-simple-example</string>
+
+	<!-- Shared preferences activity -->
 	<string name="save">salvar</string>
 	<string name="load">Carregar</string>
 	<string name="adult_check_box">É um adulto?</string>
 	<string name="age_input">Insira a idade</string>
 	<string name="name_input">Insira o nome</string>
+	<string name="next_preference_button">ir para o preferences DataStore</string>
+	<string name="key_input">Digite a chave</string>
+	<string name="value_input">Digite o valor</string>
+	<string name="read_result">Ler resultado</string>
+	<string name="serach_result">Resultado da busca:</string>
+	<string name="search_result_value">Resultado da busca pela chave! Este campo será atualizado.</string>
+
+	<!-- Preferences Data store activity -->
+
 </resources>

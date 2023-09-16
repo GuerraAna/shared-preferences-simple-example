@@ -2,13 +2,13 @@ package com.example.shared_preferences_simple_example
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.shared_preferences_simple_example.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.shared_preferences_simple_example.databinding.ActivitySharedPreferencesBinding
 
-internal class MainActivity : AppCompatActivity() {
+internal class SharedPrecerencesActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivitySharedPreferencesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +22,12 @@ internal class MainActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener { saveConfigs(editor) }
         binding.loadButton.setOnClickListener { getSavedConfigs(sharedPreference) }
+        binding.nextScreen.setOnClickListener {
+            // TODO: Add action to go to preferences dataStore
+            val intent = PreferencesDataBaseActivity.createIntent(this)
+            startActivity(intent)
+        }
     }
-
     private fun saveConfigs(editor: SharedPreferences.Editor?) {
         val name = binding.inputName.text.toString()
         val age = binding.inputAge.text.toString().toInt()
@@ -48,7 +52,7 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBinding() {
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySharedPreferencesBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
