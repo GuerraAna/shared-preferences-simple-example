@@ -11,12 +11,13 @@
 		android:id="@+id/go_back"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="voltar"
 		android:layout_margin="24dp"
-		app:layout_constraintHorizontal_bias="0"
-		app:layout_constraintTop_toTopOf="parent"
+		android:importantForAccessibility="yes"
+		android:text="@string/go_back"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"/>
+		app:layout_constraintHorizontal_bias="0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
 	<EditText
 		android:id="@+id/key_input"
@@ -38,6 +39,7 @@
 		android:layout_margin="24dp"
 		android:hint="@string/value_input"
 		android:importantForAccessibility="yes"
+		android:inputType="text"
 		android:padding="8dp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"

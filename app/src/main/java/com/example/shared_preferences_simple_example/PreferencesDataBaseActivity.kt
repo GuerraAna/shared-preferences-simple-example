@@ -14,33 +14,44 @@ import com.example.shared_preferences_simple_example.databinding.ActivityPrefere
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
-class PreferencesDataBaseActivity : AppCompatActivity() {
+internal class PreferencesDataBaseActivity : AppCompatActivity() {
 
     private var _binding: ActivityPreferencesDataBaseBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var dataStore: DataStore<Preferences>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setupBinding()
+        dataStore = createDataStore(name = Data.dataStoreName)
+        setupListeners()
+    }
+
+    private fun setupBinding() {
         _binding = ActivityPreferencesDataBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        dataStore = createDataStore(name = "settings")
+    }
 
-        binding.saveButton.setOnClickListener {
-            lifecycleScope.launch {
-                save(
-                    binding.keyInput.text.toString(),
-                    binding.valueInput.text.toString()
-                )
-            }
+    private fun setupListeners() {
+        binding.goBack.setOnClickListener { finish() }
+        binding.saveButton.setOnClickListener { saveConfigs() }
+        binding.readResult.setOnClickListener { getSavedConfigs() }
+    }
+
+    private fun getSavedConfigs() {
+        lifecycleScope.launch {
+            val value = read(binding.keyInput.text.toString())
+            binding.searchResultValue.text = value ?: Data.searchResultDefaultValue
         }
+    }
 
-        binding.readResult.setOnClickListener {
-            lifecycleScope.launch {
-                val value = read(binding.keyInput.text.toString())
-                binding.searchResultValue.text = value ?: "No value found"
-            }
+    private fun saveConfigs() {
+        lifecycleScope.launch {
+            save(
+                binding.keyInput.text.toString(),
+                binding.valueInput.text.toString()
+            )
         }
     }
 
@@ -60,6 +71,11 @@ class PreferencesDataBaseActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    private object Data {
+        const val dataStoreName = "settings"
+        const val searchResultDefaultValue = "No value found"
     }
 
     companion object {

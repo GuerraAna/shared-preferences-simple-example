@@ -13,6 +13,7 @@
 	<string name="read_result">Ler resultado</string>
 	<string name="serach_result">Resultado da busca:</string>
 	<string name="search_result_value">Resultado da busca pela chave! Este campo será atualizado.</string>
+	<string name="go_back">voltar</string>
 
 	<!-- Preferences Data store activity -->
 
